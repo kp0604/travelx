@@ -1,57 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { React} from "react";
+import Search from "./components/search";
+import ActivityList from "./components/activitylist";
+import CityShortlist from "./components/cityShortlist";
+import { Container, Grid, Box } from "@mui/material";
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Container
+      maxWidth="sm"
+      sx={{
+        minHeight: "100vh",
+        width: "100vw",
+        paddingY: 4,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Box
+        sx={{
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={12}>
+            <Search />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <CityShortlist />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <ActivityList />
+            {/* <Act /> */}
+          </Grid>
+        </Grid>
+      </Box>
+    </Container>
   );
 }
 
