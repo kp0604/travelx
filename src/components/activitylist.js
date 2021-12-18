@@ -12,7 +12,7 @@ const ActivityList = () => {
 
   const initialFetch = async () => {
     let task4res = await fetch(
-      "http://my-json-server.typicode.com/rivitest001/task04/posts"
+      "https://my-json-server.typicode.com/rivitest001/task04/posts"
     );
 
     let task4 = await task4res.json();
@@ -56,7 +56,7 @@ const ActivityList = () => {
       switch (true) {
         case startIndex >= 1 && stopIndex <= 30:
           let task1res = await fetch(
-            `http://my-json-server.typicode.com/rivitest001/task01/posts?id_gte=${startIndex}&id_lte=${stopIndex}`
+            `https://my-json-server.typicode.com/rivitest001/task01/posts?id_gte=${startIndex}&id_lte=${stopIndex}`
           );
 
           let task1 = await task1res.json();
@@ -67,7 +67,7 @@ const ActivityList = () => {
 
         case startIndex >= 31 && stopIndex <= 60:
           let task2res = await fetch(
-            `http://my-json-server.typicode.com/rivitest001/task02/posts?id_gte=${startIndex}&id_lte=${stopIndex}`
+            `https://my-json-server.typicode.com/rivitest001/task02/posts?id_gte=${startIndex}&id_lte=${stopIndex}`
           );
 
           let task2 = await task2res.json();
@@ -78,7 +78,7 @@ const ActivityList = () => {
 
         case startIndex >= 61 && stopIndex <= 90:
           let task3res = await fetch(
-            `http://my-json-server.typicode.com/rivitest001/task03/posts?id_gte=${startIndex}&id_lte=${stopIndex}`
+            `https://my-json-server.typicode.com/rivitest001/task03/posts?id_gte=${startIndex}&id_lte=${stopIndex}`
           );
 
           let task3 = await task3res.json();
