@@ -28,9 +28,11 @@ const Search = () => {
     return (
       <Paper
         {...props}
-        sx={{ borderRadius:0, "& .MuiAutocomplete-listbox": {
+        sx={{
+          borderRadius: 0,
+          "& .MuiAutocomplete-listbox": {
             padding: "0px 0px",
-        },
+          },
         }}
         elevation={0}
         placement="bottom-start"
@@ -45,14 +47,15 @@ const Search = () => {
         PaperComponent={PaperSug}
         sx={{
           "& .MuiAutocomplete-endAdornment": {
-          top: "calc(50% - 20px)"
-        }}}
-        onChange={(value) => dispatch(addItems(value))}
+            top: "calc(50% - 20px)",
+          },
+        }}
+        onChange={(e, value) => dispatch(addItems(value))}
         multiple
         id="tags-filled"
         options={cities.map((city) => city.name)}
         forcePopupIcon={true}
-        popupIcon={<SearchIcon fontSize="large"/>}
+        popupIcon={<SearchIcon fontSize="large" />}
         renderOption={(props, option) => {
           return (
             <Typography
@@ -73,11 +76,7 @@ const Search = () => {
                 backgroundColor: "#e3f2fd",
                 fontSize: 15,
               }}
-              deleteIcon={
-                <ClearSharpIcon
-                  sx={{ paddingLeft: "10px"}}
-                />
-              }
+              deleteIcon={<ClearSharpIcon sx={{ paddingLeft: "10px" }} />}
               variant="filled"
               label={option}
               {...getTagProps({ index })}

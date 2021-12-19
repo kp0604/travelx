@@ -33,8 +33,9 @@ const CityShortlist = () => {
           {({ height, width }) => (
             <FixedSizeList
               height={height}
+              width={width}
               itemSize={40}
-              itemCount={100}
+              itemCount={cityList.length}
               overscanCount={5}
             >
               {renderRow}
